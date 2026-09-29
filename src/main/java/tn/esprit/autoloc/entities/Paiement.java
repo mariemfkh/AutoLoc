@@ -1,10 +1,12 @@
-package tn.esprit.autoloc.domain;
+package tn.esprit.autoloc.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import tn.esprit.autoloc.entities.enums.ModePaiement;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -29,4 +31,8 @@ public class Paiement {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private ModePaiement modePaiement;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idContrat", nullable = false)
+    private Contrat contrat;
 }
