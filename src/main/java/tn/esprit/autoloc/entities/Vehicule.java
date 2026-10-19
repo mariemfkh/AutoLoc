@@ -51,8 +51,8 @@ public class Vehicule {
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "vehicule_equipement",
-            joinColumns = @JoinColumn(name = "id_vehicule"),
-            inverseJoinColumns = @JoinColumn(name = "id_equipement")
+            joinColumns = @JoinColumn(name = "idVehicule"),
+            inverseJoinColumns = @JoinColumn(name = "idEquipement")
     )
     private Set<Equipement> equipements = new HashSet<>();
 

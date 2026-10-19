@@ -30,6 +30,7 @@ public class Contrat {
 
     @Column(nullable = false)
     private boolean valide;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idReservation", nullable = false, unique = true)
     private Reservation reservation;
